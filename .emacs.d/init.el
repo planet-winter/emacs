@@ -7,27 +7,33 @@
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
-(setq site-lisp-dir
+(setq planet-extensions-lisp-dir
      (expand-file-name "extensions" user-emacs-directory))
 
 ;; Set path to config
-(setq custom-config
+(setq planet-config-dir
      (expand-file-name "config" user-emacs-directory))
+
+;; Set path to setup
+(setq planet-setup-dir
+     (expand-file-name "setup" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path site-lisp-dir)
-(add-to-list 'load-path custom-config)
+(add-to-list 'load-path planet-extensions-lisp-dir)
+(add-to-list 'load-path planet-config-dir)
+(add-to-list 'load-path planet-setup-dir)
 
-;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+;;; Keep emacs Custom-settings in separate file
+;(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;(when (file-exists-p custom-file)
+;  (load custom-file)
 
 ;; Set up appearance early
 (require 'appearance)
 
 ;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
+(dolist (project (directory-files planet-extensions-lisp-dir t "\\w+"))
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
@@ -44,7 +50,7 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-;; Setup packages
+;; Setup packages from MELPA
 (require 'setup-package)
 
 ;; Install extensions if they're missing
@@ -70,11 +76,9 @@
      restclient
      highlight-escape-sequences
      whitespace-cleanup-mode
-     elisp-slime-nav
      git-commit-mode
      gitconfig-mode
      gitignore-mode
-     clojure-mode
      groovy-mode
      prodigy
      cider
@@ -198,3 +202,4 @@
 ;; Conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
+
