@@ -4,7 +4,16 @@
       truncate-partial-width-windows nil)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+(global-hl-line-mode 0)
+
+;; Highlight matching parentheses when the point is on them.
+(show-paren-mode 1)
+
+;; higlight current line
+(set-face-background 'hl-line "green")
+
+;; Blinking cursor
+(blink-cursor-mode 1)
 
 ;; Set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
@@ -15,13 +24,10 @@
     (add-to-list 'custom-theme-load-path path)))
 
 ;; Default theme
-(load-theme 'default-black t)
+(load-theme 'manoj-dark t)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
-
-;; Highlight matching parentheses when the point is on them.
-(show-paren-mode 1)
 
 
 (provide 'appearance)

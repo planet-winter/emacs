@@ -24,10 +24,10 @@
 (add-to-list 'load-path planet-config-dir)
 (add-to-list 'load-path planet-setup-dir)
 
-;;; Keep emacs Custom-settings in separate file
-;(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-;(when (file-exists-p custom-file)
-;  (load custom-file)
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file)
 
 ;; Set up appearance early
 (require 'appearance)
@@ -90,7 +90,8 @@
      cider
      cider-tracing
      perspective
-     smex)))
+     smex
+     shell-command)))
 
 (condition-case nil
     (init--install-packages)
@@ -126,7 +127,7 @@
           ruby-mode
           markdown-mode
           groovy-mode)
-  (add-hook it 'turn-on-smartparens-mode))
+  (add-hook it 'turn-on-smartparens-mode)))
 
 ;; Language specific setup files
 ;(eval-after-load 'js2-mode '(require 'setup-js2-mode))
@@ -184,6 +185,9 @@
 ;; Setup key bindings
 (require 'key-bindings)
 
+;; general options
+(require 'general-options)
+
 
 ;; ;; Emacs server
 ;; (require 'server)
@@ -198,15 +202,3 @@
 ;; Conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("9527feeeec43970b1d725bdc04e97eb2b03b15be982ac50089ad223d3c6f2920" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
