@@ -15,7 +15,7 @@
     (add-to-list 'custom-theme-load-path path)))
 
 ;; Default theme
-(load-theme 'default-black)
+(load-theme 'default-black t)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

@@ -32,6 +32,11 @@
 ;; Set up appearance early
 (require 'appearance)
 
+;; Settings for currently logged in user
+(setq user-settings-dir
+      (concat user-emacs-directory "users/" user-login-name))
+(add-to-list 'load-path user-settings-dir)
+
 ;; Add external projects to load path
 (dolist (project (directory-files planet-extensions-lisp-dir t "\\w+"))
   (when (file-directory-p project)
@@ -71,6 +76,7 @@
      ido-vertical-mode
      ido-at-point
      simple-httpd
+     smooth-scrolling
      guide-key
      nodejs-repl
      restclient
@@ -80,9 +86,11 @@
      gitconfig-mode
      gitignore-mode
      groovy-mode
-     prodigy
+     undo-tree
      cider
-     cider-tracing)))
+     cider-tracing
+     perspective
+     smex)))
 
 (condition-case nil
     (init--install-packages)
@@ -101,21 +109,9 @@
 (setq guide-key/popup-window-position 'bottom)
 
 ;; Setup extensions
-(eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'org '(require 'setup-org))
-(eval-after-load 'dired '(require 'setup-dired))
-(eval-after-load 'magit '(require 'setup-magit))
-(eval-after-load 'grep '(require 'setup-rgrep))
 (eval-after-load 'shell '(require 'setup-shell))
-(require 'setup-hippie)
 (require 'setup-yasnippet)
-;(require 'setup-perspective)
-;(require 'setup-ffip)
-(require 'setup-html-mode)
-;(require 'setup-paredit)
-
-;(require 'prodigy)
-;(global-set-key (kbd "C-x M-m") 'prodigy)
 
 ;; Font lock dash.el
 (eval-after-load "dash" '(dash-enable-font-lock))
@@ -173,13 +169,13 @@
 ;; (require 'change-inner)
 ;; (require 'multifiles)
 
-;; Fill column indicator
-(require 'fill-column-indicator)
-(setq fci-rule-color "#111122")
+;;; Fill column indicator
+;(require 'fill-column-indicator)
+;(setq fci-rule-color "#111122")
 
-;; Browse kill ring
-(require 'browse-kill-ring)
-(setq browse-kill-ring-quit-action 'save-and-restore)
+;;; Browse kill ring
+;(require 'browse-kill-ring)
+;(setq browse-kill-ring-quit-action 'save-and-restore)
 
 ;; Smart M-x is smart
 (require 'smex)
@@ -202,4 +198,15 @@
 ;; Conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("9527feeeec43970b1d725bdc04e97eb2b03b15be982ac50089ad223d3c6f2920" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
