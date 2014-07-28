@@ -3,11 +3,11 @@ backups
 *~
 .places
 session.*
+.emacs.d/history
 tramp
 elpa
 swank
 emms
-site-lisp/adventur-mode
 *.elc
 .DS_Store
 .yas-compiled-snippets.el
