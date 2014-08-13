@@ -54,3 +54,5 @@
 (setq confirm-kill-emacs nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+
+(provide 'general-options)
