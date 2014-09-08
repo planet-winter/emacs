@@ -91,7 +91,8 @@
      cider-tracing
      perspective
      smex
-     shell-command)))
+     shell-command
+     markdown-mode)))
 
 (condition-case nil
     (init--install-packages)

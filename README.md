@@ -7,7 +7,7 @@ I used https://github.com/magnars/.emacs.d as a starting point
 
 clone the repo 
 
-    git clone --recursive https://planet-winter@bitbucket.org/planet-winter/emacs.git
+    git clone https://planet-winter@bitbucket.org/planet-winter/emacs.git
 
 and execute
 
