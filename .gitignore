@@ -1,6 +1,7 @@
 auto-save-list
 backups
 *~
+#*
 .places
 session.*
 .emacs.d/history
@@ -9,6 +10,7 @@ elpa
 swank
 history
 emms
+history
 *.elc
 .DS_Store
 .yas-compiled-snippets.el
