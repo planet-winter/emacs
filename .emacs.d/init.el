@@ -189,7 +189,6 @@
 ;; general options
 (require 'general-options)
 
-
 ;; ;; Emacs server
 ;; (require 'server)
 ;; (unless (server-running-p)

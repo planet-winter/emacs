@@ -42,10 +42,10 @@
 (setq appt-disp-window-function (function isg-org-alarm))
 
 
-(setq org-capture-templates (quote (("t" "todo" entry (file "~/org/todo.org") "** TODO %? ")
-                                    ("p" "project" entry (file "~/org/projekte.org") "** %?")
-                                    ("s" "started" entry (file "~/org/todo.org") "** STARTED %?")
-                                    ("n" "next" entry (file "~/org/todo.org") "** NEXT %?"))))
+(setq org-capture-templates (quote (("t" "todo" entry (file "~/org/todo.org.gpg") "** TODO %? ")
+                                    ("p" "project" entry (file "~/org/projekte.org.gpg") "** %?")
+                                    ("s" "started" entry (file "~/org/todo.org.gpg") "** STARTED %?")
+                                    ("n" "next" entry (file "~/org/todo.org.gpg") "** NEXT %?"))))
 
 
 
