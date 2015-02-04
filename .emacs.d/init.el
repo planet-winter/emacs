@@ -92,7 +92,9 @@
      perspective
      smex
      shell-command
-     markdown-mode)))
+     markdown-mode
+     browse-kill-ring
+     rhtml-mode)))
 
 (condition-case nil
     (init--install-packages)
@@ -131,15 +133,10 @@
   (add-hook it 'turn-on-smartparens-mode)))
 
 ;; Language specific setup files
-;(eval-after-load 'js2-mode '(require 'setup-js2-mode))
-;(eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-;(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
-;(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
+(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
 
 ;; Load stuff on demand
-;(autoload 'skewer-start "setup-skewer" nil t)
-;(autoload 'skewer-demo "setup-skewer" nil t)
-;(autoload 'flycheck-mode "setup-flycheck" nil t)
+(autoload 'flycheck-mode "setup-flycheck" nil t)
 (autoload 'auto-complete-mode "auto-complete" nil t)
 
 ;; Map files to modes
@@ -155,29 +152,9 @@
 (define-key global-map (kbd "M-&") 'vr/query-replace)
 (define-key global-map (kbd "M-/") 'vr/replace)
 
-;; ;; Functions (load all files in defuns-dir)
-;; (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-;; (dolist (file (directory-files defuns-dir t "\\w+"))
-;;   (when (file-regular-p file)
-;;     (load file)))
-
-;; (require 'expand-region)
-;; (require 'multiple-cursors)
-;; (require 'delsel)
-;; (require 'jump-char)
-;; (require 'eproject)
-;; (require 'wgrep)
-;; (require 'smart-forward)
-;; (require 'change-inner)
-;; (require 'multifiles)
-
-;;; Fill column indicator
-;(require 'fill-column-indicator)
-;(setq fci-rule-color "#111122")
-
-;;; Browse kill ring
-;(require 'browse-kill-ring)
-;(setq browse-kill-ring-quit-action 'save-and-restore)
+;; Browse kill ring
+(require 'browse-kill-ring)
+(setq browse-kill-ring-quit-action 'save-and-restore)
 
 ;; Smart M-x is smart
 (require 'smex)

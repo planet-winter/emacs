@@ -40,9 +40,9 @@
 ; delete seleted text when typing
 (delete-selection-mode 1)
 
-;; ; prefix buffernames with dir
-;; (require 'uniquify)
-;; (setq uniquify-buffer-name-style 'forward)
+;; prefix buffernames with dir
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 ; suspress warnings
 (setq warning-minimum-level :error)

@@ -1,3 +1,6 @@
+;; set basic appearance and theme
+
+;; no bell...
 (setq visible-bell t
       font-lock-maximum-decoration t
       color-theme-is-global t
