@@ -94,7 +94,8 @@
      shell-command
      markdown-mode
      browse-kill-ring
-     rhtml-mode)))
+     rhtml-mode
+     yaml-mode)))
 
 (condition-case nil
     (init--install-packages)

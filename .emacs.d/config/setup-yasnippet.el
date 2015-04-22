@@ -4,7 +4,8 @@
 (yas-global-mode 1)
 
 ;; Load the snippets
-(yas/load-directory yas-snippet-dirs)
+; default is ~/.emacs.d/snippets plus shipped ones
+;(yas-load-directory yas-snippet-dirs)
 
 ;;; No dropdowns please, yas
 ;(setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
