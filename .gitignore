@@ -2,13 +2,14 @@ auto-save-list
 backups
 *~
 #*
+#*#
+.#*
 .places
 session.*
 .emacs.d/history
 tramp
 elpa
 swank
-history
 emms
 history
 *.elc

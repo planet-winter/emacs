@@ -1,7 +1,6 @@
 ;; Setup shell
 
 ;; bash-completion
-
 (autoload 'bash-completion-dynamic-complete
   "bash-completion"
   "BASH completion hook")
@@ -11,12 +10,10 @@
           'bash-completion-dynamic-complete)
 
 ;; tab-completion for shell-command
-
 (require 'shell-command)
 (shell-command-completion-mode)
 
 ;; C-d to kill buffer if process is dead.
-
 (defun comint-delchar-or-eof-or-kill-buffer (arg)
   (interactive "p")
   (if (null (get-buffer-process (current-buffer)))
