@@ -1,9 +1,11 @@
 #!/bin/bash
 
-repodir=$(pwd)
+# saver pwd
+REPODIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ~
 rm -irf .emacs.d	
-ln -s $repodir/.emacs.d
+ln -s $REPODIR/.emacs.d
+ln -s $REPODIR/.gnus
 mv .emacs .emacs.bak
-#ln -s $repodir/.emacs
+
