@@ -2,10 +2,9 @@ auto-save-list
 backups
 *~
 #*
-<<<<<<< HEAD
+#.gnus#
+
 #*#
-=======
->>>>>>> cc10213f2acf59b20cb2b771dfe571bba0e86ff3
 .#*
 .places
 session.*

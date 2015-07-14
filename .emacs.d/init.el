@@ -62,6 +62,7 @@
 (defun init--install-packages ()
   (packages-install
    '(magit
+     magit-svn
      paredit
      move-text
      gist
