@@ -89,7 +89,6 @@
      groovy-mode
      undo-tree
      cider
-     cider-tracing
      perspective
      smex
      shell-command
