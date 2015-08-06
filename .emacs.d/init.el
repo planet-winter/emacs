@@ -95,7 +95,9 @@
      markdown-mode
      browse-kill-ring
      rhtml-mode
-     yaml-mode)))
+     yaml-mode
+     ztree
+     )))
 
 (condition-case nil
     (init--install-packages)

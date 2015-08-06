@@ -9,6 +9,7 @@ backups
 .places
 session.*
 .emacs.d/history
+.emacs.d/tramp
 tramp
 elpa
 swank

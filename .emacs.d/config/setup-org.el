@@ -4,6 +4,7 @@
 
 (setq org-agenda-files '("~/org/"))
 
+
 (defun planet-show-todo-list ()
   (interactive)
   (org-todo-list nil)
