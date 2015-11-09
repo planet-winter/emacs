@@ -61,11 +61,12 @@
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   '(magit
-     magit-svn
+   '(
+     ;magit ; breaks on RHEL7
+     ;magit-svn ; breaks on RHEL7
      paredit
      move-text
-     gist
+     ;gist ; breaks on RHEL7
      htmlize
      visual-regexp
      flycheck
@@ -83,7 +84,7 @@
      restclient
      highlight-escape-sequences
      whitespace-cleanup-mode
-     git-commit-mode
+     ;git-commit-mode
      gitconfig-mode
      gitignore-mode
      groovy-mode
