@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yum install emacs-nox
+sudo yum install -v -y emacs-nox
