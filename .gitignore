@@ -8,8 +8,10 @@ backups
 .#*
 .places
 session.*
-.emacs.d/history
-.emacs.d/tramp
+emacs.d/history
+emacs.d/tramp
+emacs.d/smex-items
+emacs.d/recentf
 tramp
 elpa
 swank
