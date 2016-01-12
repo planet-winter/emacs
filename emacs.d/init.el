@@ -19,7 +19,7 @@
      (expand-file-name "setup" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path user-emacs-directory)
+;;(add-to-list 'load-path user-emacs-directory) ;; do not add .emacs.d to load path again
 (add-to-list 'load-path planet-extensions-lisp-dir)
 (add-to-list 'load-path planet-config-dir)
 (add-to-list 'load-path planet-setup-dir)
@@ -62,11 +62,11 @@
 (defun init--install-packages ()
   (packages-install
    '(
-     ;magit ; breaks on RHEL7
-     ;magit-svn ; breaks on RHEL7
+     magit ; breaks on RHEL7
+     magit-svn ; breaks on RHEL7
      paredit
      move-text
-     ;gist ; breaks on RHEL7
+     gist ; breaks on RHEL7
      htmlize
      visual-regexp
      flycheck
@@ -84,7 +84,7 @@
      restclient
      highlight-escape-sequences
      whitespace-cleanup-mode
-     ;git-commit-mode
+     ;;git-commit-mode ;; not available f23
      gitconfig-mode
      gitignore-mode
      groovy-mode
@@ -170,10 +170,10 @@
 ;; general options
 (require 'general-options)
 
-;; ;; Emacs server
-;; (require 'server)
-;; (unless (server-running-p)
-;;   (server-start))
+;; Emacs server
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 ;; ;; Run at full power please
 ;; (put 'downcase-region 'disabled nil)
