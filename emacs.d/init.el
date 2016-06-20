@@ -1,4 +1,11 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -84,7 +91,7 @@
      restclient
      highlight-escape-sequences
      whitespace-cleanup-mode
-     ;;git-commit-mode ;; not available f23
+     ;git-commit-mode ;; not available f23
      gitconfig-mode
      gitignore-mode
      groovy-mode
@@ -93,7 +100,7 @@
      perspective
      smex
      shell-command
-     markdown-mode
+     markdown-mode+
      browse-kill-ring
      rhtml-mode
      yaml-mode
@@ -119,7 +126,7 @@
 ;; Setup extensions
 (eval-after-load 'org '(require 'setup-org))
 (eval-after-load 'shell '(require 'setup-shell))
-(require 'setup-yasnippet)
+;(require 'setup-yasnippet)
 
 ;; Font lock dash.el
 (eval-after-load "dash" '(dash-enable-font-lock))
@@ -160,9 +167,22 @@
 (require 'browse-kill-ring)
 (setq browse-kill-ring-quit-action 'save-and-restore)
 
+
 ;; Smart M-x is smart
 (require 'smex)
 (smex-initialize)
+
+
+;; ido mode
+(ido-mode)
+(ido-everywhere 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(setq ido-use-filename-at-point 'guess)
+; easier throw away buffer creation
+(setq ido-create-new-buffer 'always)
+(ido-mode 1)
+
 
 ;; Setup key bindings
 (require 'key-bindings)
@@ -175,10 +195,6 @@
 (unless (server-running-p)
   (server-start))
 
-;; ;; Run at full power please
-;; (put 'downcase-region 'disabled nil)
-;; (put 'upcase-region 'disabled nil)
-;; (put 'narrow-to-region 'disabled nil)
 
 ;; Conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)

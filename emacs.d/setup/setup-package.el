@@ -1,12 +1,21 @@
 (require 'package)
 
 ;; Add melpa to package repos
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (package-initialize)
 
 (unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
   (package-refresh-contents))
+
+;; elpy repo
+(add-to-list 'package-archives
+	                  '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
 
 ;; install dash from melpa to solve chicken and egg problem
 (when (not (package-installed-p 'dash))

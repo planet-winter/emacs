@@ -11,6 +11,8 @@ emacs.d/history
 emacs.d/tramp
 emacs.d/smex-items
 emacs.d/recentf
+emacs.d/abbrev_defs
+emacs.d/ac-comphist
 tramp
 elpa
 swank
