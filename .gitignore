@@ -1,10 +1,11 @@
 auto-save-list
 backups
 *~
-#*
-#.gnus#
-#*#
+\#*
+\#.gnus\#
+\#*\#
 .#*
+.dat
 .places
 session.*
 emacs.d/history
