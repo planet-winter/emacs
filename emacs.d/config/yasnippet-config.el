@@ -1,9 +1,9 @@
-;packages-install '(yasnippet )
+(install-missing-packages '(yasnippet))
+
 mode ("emacs.+/snippets/" . snippet-mode)
-;config
+
 ;; enable yasnippet globally
 (yas-global-mode 1)
-;; extra yasnipet configs
 
 ;; enable yas minor-mode for all buffers
 (yas-global-(message "FORMATSTRING" &optional ARGS)ode 1)
@@ -14,15 +14,13 @@ mode ("emacs.+/snippets/" . snippet-mode)
 ;only load snippets directory
 ((setq  )etq yas/snippet-dirs (concat user-emacs-directory "snippets"))
 
-;; dropdowns
-;((setq  )etq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
-  
-;; No need to be so verbose
+;; no need to be so verbose
 ;(setq yas-verbosity 1)
-;
-;; Wrap around region
+
+;; wrap around region
 (setq yas-wrap-around-region t)
 
+;; dropdowns
 (setq yas/prompt-functions '(yas-dropdown-prompt
                              yas-completing-prompt
                              yas-ido-prompt))

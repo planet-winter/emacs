@@ -1,4 +1,9 @@
-;; set basic appearance and theme
+;;; set basic appearance and theme
+
+;; install themes
+;(install-missing-packages '(ample-theme
+;			    solarized-theme
+;			    zenburn-theme))
 
 ;; no bell...
 (setq visible-bell t
@@ -6,19 +11,17 @@
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
-;; Highlight current line
-(global-hl-line-mode 0)
+;; highlight current line
+(global-hl-line-mode 1)
+;(set-face-background 'hl-line "green")
 
-;; Highlight matching parentheses when the point is on them.
+;; highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
-;; higlight current line
-(set-face-background 'hl-line "green")
-
-;; Blinking cursor
+;; blinking cursor
 (blink-cursor-mode 1)
 
-;; Set custom theme path
+;; set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
 
 (dolist
@@ -26,10 +29,10 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-;; Default theme
-(load-theme 'manoj-dark t)
+;; default theme
+(load-theme 'zenburn t)
 
-;; Don't defer screen updates when performing operations
+;; don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
 
 

@@ -103,7 +103,6 @@
      markdown-mode+
      browse-kill-ring
      rhtml-mode
-     yaml-mode
      ztree
      )))
 
@@ -124,9 +123,9 @@
 (setq guide-key/popup-window-position 'bottom)
 
 ;; Setup extensions
-(eval-after-load 'org '(require 'setup-org))
-(eval-after-load 'shell '(require 'setup-shell))
-;(require 'setup-yasnippet)
+(eval-after-load 'org '(require 'org-config))
+(eval-after-load 'shell '(require 'shell-config))
+;(require 'yasnippet-config)
 
 ;; Font lock dash.el
 (eval-after-load "dash" '(dash-enable-font-lock))
@@ -143,32 +142,32 @@
           groovy-mode)
   (add-hook it 'turn-on-smartparens-mode)))
 
-;; Language specific setup files
-(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
+;; language specific setup files
+;(eval-after-load 'markdown-mode '(require 'markdown-config))
 
-;; Load stuff on demand
-(autoload 'flycheck-mode "setup-flycheck" nil t)
+;; load stuff on demand
+(autoload 'flycheck-mode "flycheck-config" nil t)
 (autoload 'auto-complete-mode "auto-complete" nil t)
 
-;; Map files to modes
+;; map files to modes
 (require 'mode-mappings)
 
-;; Highlight escape sequences
+;; highlight escape sequences
 (require 'highlight-escape-sequences)
 (hes-mode)
 (put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
 
-;; Visual regexp
+;; visual regexp
 (require 'visual-regexp)
 (define-key global-map (kbd "M-&") 'vr/query-replace)
 (define-key global-map (kbd "M-/") 'vr/replace)
 
-;; Browse kill ring
+;; browse kill ring
 (require 'browse-kill-ring)
 (setq browse-kill-ring-quit-action 'save-and-restore)
 
 
-;; Smart M-x is smart
+;; smart M-x is smart
 (require 'smex)
 (smex-initialize)
 
@@ -184,7 +183,7 @@
 (ido-mode 1)
 
 
-;; Setup key bindings
+;; key bindings
 (require 'key-bindings)
 
 ;; general options
@@ -196,6 +195,6 @@
   (server-start))
 
 
-;; Conclude init by setting up specifics for the current user
+;; conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))

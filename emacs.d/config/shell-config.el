@@ -1,4 +1,4 @@
-;; Setup shell
+;; setup shell
 
 ;; bash-completion
 (autoload 'bash-completion-dynamic-complete
@@ -24,4 +24,4 @@
           (lambda ()
             (define-key shell-mode-map (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
 
-(provide 'setup-shell)
+(provide 'shell-config)

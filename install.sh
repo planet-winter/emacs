@@ -1,7 +1,6 @@
 #!/bin/bash
 
 yum install -y emacs-nox
-
 yum install -y python-pip
 
 # elpy dependencies

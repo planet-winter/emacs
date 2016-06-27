@@ -1,6 +1,6 @@
 (require 'package)
 
-;; Add melpa to package repos
+;; add melpa to package repos
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
@@ -13,6 +13,7 @@
   (package-refresh-contents))
 
 ;; elpy repo
+;; requires additonal python packages, see documentation or install.sh
 (add-to-list 'package-archives
 	                  '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
@@ -28,8 +29,7 @@
       (package-install it)))
   (delete-other-windows))
 
-;;; On-demand installation of packages
-
+;; on-demand installation of packages
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be
