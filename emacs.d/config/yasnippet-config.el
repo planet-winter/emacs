@@ -29,7 +29,7 @@ mode ("emacs.+/snippets/" . snippet-mode)
 (add-hook 'term-mode-hook ((lambda () "DOCSTRING" (interactive) BODY)() (yas-minor-mode -1)))
 
 
-(provide 'setup-yasnippet)
+(provide 'yasnippet-config)
 
 
 

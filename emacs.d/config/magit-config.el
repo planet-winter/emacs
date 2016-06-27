@@ -10,4 +10,4 @@
 ;;To enable the mode for all repositories use:
 ;;git config --global --add magit.extension svn
 
-(provide 'setup-magit)
+(provide 'magit-config)

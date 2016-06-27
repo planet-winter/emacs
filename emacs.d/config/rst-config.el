@@ -47,4 +47,4 @@ packages-install '(
             (add-hook 'after-save-hook 'rst-validate-buffer)))
 
 
-(provide 'setup-rst)
+(provide 'rst-config)

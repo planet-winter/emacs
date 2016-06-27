@@ -1,0 +1,10 @@
+* dired-monde
+  M-d  invoke dired list directory
+  D    delete selected file
+  d    mark for deletion
+  u    unmark for deletion
+  x    delete
+  R    rename file
+  O    chage owner
+  G    change group
+  M    change mode

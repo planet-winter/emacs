@@ -7,4 +7,4 @@
 (setq password-cache-expiry nil)
 (setq tramp-debug-buffer t)
 
-(provide 'setup-tramp)
+(provide 'tramp-config)

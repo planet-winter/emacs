@@ -68,4 +68,4 @@
               ("n" "next" entry (file (concat org-directory "/todo.org.gpg")) "** NEXT %?"))))
 
 
-(provide 'setup-org)
+(provide 'org-config)
