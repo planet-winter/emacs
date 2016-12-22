@@ -37,3 +37,7 @@ that are best handled by the emacs package manager.
 ## Credits
 
 Used https://github.com/magnars/.emacs.d as a starting point
+
+## Author
+
+Daniel Winter
