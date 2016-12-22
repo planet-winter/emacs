@@ -1,4 +1,4 @@
-* dired-monde
+* dired-mode
   M-d  invoke dired list directory
   D    delete selected file
   d    mark for deletion

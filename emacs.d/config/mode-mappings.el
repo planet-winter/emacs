@@ -91,6 +91,9 @@
 ;; reStructuredText
 (add-to-list 'auto-mode-alist '("\\.rst\\'"   . rst-mode))
 
+;; java script
+(add-to-list 'auto-mode-alist '("\\.js\\'"   . js3-mode))
+
 
 (provide 'mode-mappings)
 
