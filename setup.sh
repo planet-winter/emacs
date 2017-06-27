@@ -3,18 +3,26 @@
 # saver pwd
 REPODIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd ~
-#rm -irf .emacs.d # hu errrr emmm...
-if [ -f emacs.d ]; then
-    # regular file
-    mv emacs.d emacs.d_backup$(date "+%Y%m%dT%H%M%S")
-elif [ -L emacs.d ]
-    # direcory is a symlink
-    ln -s $REPODIR/emacs.d .emacs.d  > /dev/null 2>&1
-fi
-ln -s $REPODIR/gnus .gnus  > /dev/null 2>&1
-if [[ ! -f ~/.emacs.bak ]]; then
-  if [[ -f .emacs ]]; then
-    mv .emacs .emacs.bak
-  fi
-fi
+timestamp=$(date "+%Y%m%dT%H%M%S")
+
+
+function save_symlink () {
+    cd ~
+    for target in $@; do
+	#rm -irf .emacs.d # hu errrr emmm...
+	if [ ! -L $target ]; then
+            # not a symlink
+	    if [ -f $target ] ;then
+		mv $target ${target}_backup_${timestamp}
+	    fi
+	fi
+        # could be a symlink to something else
+        #  write or overwrite hidden symlink
+        ln -s -f $REPODIR/$target $target  > /dev/null 2>&1
+    
+    done
+}
+
+save_symlink .emacs .emacs.d .gnus
+
+
