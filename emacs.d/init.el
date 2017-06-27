@@ -1,16 +1,14 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
 
 ;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; installed packages.
 (package-initialize)
 
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; No splash screen please ... jeez
+;; No splash screen please ... jeez neeei
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
@@ -69,40 +67,45 @@
 (defun init--install-packages ()
   (packages-install
    '(
-     magit ; breaks on RHEL7
-     magit-svn ; breaks on RHEL7
-     paredit
-     move-text
-     gist ; breaks on RHEL7
-     htmlize
-     visual-regexp
-     flycheck
+     ;git-commit-mode ;; not available f23
+     ansible
+     ansible-doc
+     auto-complete
+     browse-kill-ring
+     cider
+     company-ansible
+     crappy-jsp-mode
+     css-eldoc
      flx
      flx-ido
-     css-eldoc
-     yasnippet
-     smartparens
-     ido-vertical-mode
-     ido-at-point
-     simple-httpd
-     smooth-scrolling
-     guide-key
-     nodejs-repl
-     restclient
-     highlight-escape-sequences
-     whitespace-cleanup-mode
-     ;git-commit-mode ;; not available f23
+     flycheck
+     gist ; breaks on RHEL7
      gitconfig-mode
      gitignore-mode
      groovy-mode
-     undo-tree
-     cider
-     perspective
-     smex
-     shell-command
+     guide-key
+     highlight-escape-sequences
+     htmlize
+     ido-at-point
+     ido-vertical-mode
+     magit ; breaks on RHEL7
+     magit-svn ; breaks on RHEL7
      markdown-mode+
-     browse-kill-ring
+     move-text
+     nodejs-repl
+     paredit
+     perspective
+     restclient
      rhtml-mode
+     shell-command
+     simple-httpd
+     smartparens
+     smex
+     smooth-scrolling
+     undo-tree
+     visual-regexp
+     whitespace-cleanup-mode
+     yasnippet
      ztree
      )))
 
@@ -182,6 +185,8 @@
 (setq ido-create-new-buffer 'always)
 (ido-mode 1)
 
+;; ansible
+(require 'ansible-config)
 
 ;; key bindings
 (require 'key-bindings)

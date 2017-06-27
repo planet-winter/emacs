@@ -11,3 +11,4 @@
 ;;git config --global --add magit.extension svn
 
 (provide 'magit-config)
+

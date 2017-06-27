@@ -1,9 +1,10 @@
 ;;; set basic appearance and theme
 
 ;; install themes
-;(install-missing-packages '(ample-theme
-;			    solarized-theme
-;			    zenburn-theme))
+;(packages-install'(
+;                  ample-theme
+;		   solarized-theme
+;		   zenburn-theme))
 
 ;; no bell...
 (setq visible-bell t
