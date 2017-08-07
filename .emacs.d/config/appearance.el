@@ -1,10 +1,12 @@
 ;;; set basic appearance and theme
 
 ;; install themes
-;(packages-install'(
-;                  ample-theme
-;		   solarized-theme
-;		   zenburn-theme))
+(defun init--install-packages ()
+  (packages-install
+   '(
+	ample-theme
+	solarized-theme))
+  )
 
 ;; no bell...
 (setq visible-bell t
@@ -31,7 +33,7 @@
     (add-to-list 'custom-theme-load-path path)))
 
 ;; default theme
-(load-theme 'zenburn t)
+(load-theme 'manoj-dark t)
 
 ;; don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

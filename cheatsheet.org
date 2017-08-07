@@ -8,3 +8,7 @@
   O    chage owner
   G    change group
   M    change mode
+* python
+  M-p                  run python shell
+  M-x pyvenv-activate  choose virtual env directory to activate  
+  C-h C-c C-c          compile, run whole buffer in python shell

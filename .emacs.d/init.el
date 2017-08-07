@@ -68,9 +68,11 @@
   (packages-install
    '(
      ;git-commit-mode ;; not available f23
+     ample-theme
      ansible
      ansible-doc
      auto-complete
+     auto-virtualenv
      browse-kill-ring
      cider
      company-ansible
@@ -95,6 +97,7 @@
      nodejs-repl
      paredit
      perspective
+     projectile
      restclient
      rhtml-mode
      shell-command
@@ -102,10 +105,13 @@
      smartparens
      smex
      smooth-scrolling
+     solarized-theme
      undo-tree
+     virtualenvwrapper
      visual-regexp
      whitespace-cleanup-mode
      yasnippet
+     zenburn-theme
      ztree
      )))
 
