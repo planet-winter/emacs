@@ -12,3 +12,9 @@
   M-p                  run python shell
   M-x pyvenv-activate  choose virtual env directory to activate  
   C-h C-c C-c          compile, run whole buffer in python shell
+* window resizing
+  C-x ^  makes the current window taller
+  C-x }  makes it wider
+  C-x {  makes it narrower
+* Node JS
+  M-x run-js
