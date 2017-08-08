@@ -1,4 +1,5 @@
 # planet-emacs settings
+[![Build Status](https://travis-ci.org/planet-winter/emacs.svg?branch=master)](https://travis-ci.org/planet-winter/emacs)
 
 my emacs config featuring:
 
