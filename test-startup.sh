@@ -8,7 +8,6 @@ ${EMACS:=emacs} -nw --batch \
                 --eval '(let ((debug-on-error t)
                               (url-show-status nil)
                               (user-init-file (expand-file-name ".emacs.d/init.el"))
-                              (load-path (delq default-directory load-path)))
                            (load-file user-init-file)
                            (run-hooks (quote after-init-hook)))'
 echo "Startup successful"
