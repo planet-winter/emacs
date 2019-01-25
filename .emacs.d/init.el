@@ -4,6 +4,12 @@
 ;; installed packages.
 (package-initialize)
 
+(dolist (package '(package-a package-b package-c))
+ (unless (package-installed-p package)
+   (package-install package))
+ (require package))))
+
+
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -67,7 +73,7 @@
 (defun init--install-packages ()
   (packages-install
    '(
-     ;git-commit-mode ;; not available f23
+     git-commit-mode ;; not available f23
      ample-theme
      ansible
      ansible-doc

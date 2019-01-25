@@ -5,10 +5,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
     (doremi bash-completion projectile virtualenvwrapper auto-virtualenv yasnippet magit flx crappy-jsp-mode dash auto-complete company-ansible ansible-doc ansible js3-mode js2-mode ample-theme solarized-theme zenburn-theme monokai-theme git-commit-mode ztree yaml-mode whitespace-cleanup-mode visual-regexp undo-tree smooth-scrolling smex smartparens simple-httpd shell-command rhtml-mode restclient perspective paredit nodejs-repl move-text markdown-mode+ magit-svn ido-vertical-mode ido-at-point htmlize highlight-escape-sequences guide-key groovy-mode gitignore-mode gitconfig-mode gist flycheck flx-ido elpy css-eldoc cider browse-kill-ring)))
+ '(safe-local-variable-values (quote ((py-indent-offset . 4))))
  '(spice-output-local "Gnucap")
  '(spice-simulator "Gnucap")
  '(spice-waveform-viewer "Gwave"))
